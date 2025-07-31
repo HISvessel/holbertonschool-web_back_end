@@ -7,4 +7,6 @@ result of floats, and if any other data type is passed, an error is thrown"""
 
 
 def add(a: float, b: float) -> float:
+    """this function is only strictly to recieve floats"""
+
     return a + b
