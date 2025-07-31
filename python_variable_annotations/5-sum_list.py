@@ -3,7 +3,9 @@
 list and returns the sums of its indeces"""
 
 
-def sum_list(input_list: list[float]) -> float:
+from typing import List
+
+def sum_list(input_list: List[float]) -> float:
     """this function returns the sum of a list
     of floats, reinforced with type annotation."""
     return sum(input_list)
