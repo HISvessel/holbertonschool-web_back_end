@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-import asyncio
-from typing import List
 """this script contains a function that creates a list of
 concurrencies and annotates them in sequential order"""
+
+import asyncio
+from typing import List
 
 
 wait_random = __import__('0-basic_async_syntax').wait_random
