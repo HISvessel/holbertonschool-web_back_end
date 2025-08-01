@@ -1,0 +1,1 @@
+This repository contains a series of tasks that marks the beginning of the Async function topic. Asynchronous functions are those that can allow other functions to run concurrently without needing to follow a sequence where it needs to execute in order for the rest of the chain to complete its execution. It does this by having the await keyword as part of its response or return.
