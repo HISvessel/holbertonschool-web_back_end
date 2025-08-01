@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """this script contains the function called measure_time that takes
-an integer and returns the total elapsed time of a given set of concurrencies"""
+an integer and returns the total elapsed time of a given set of
+concurrencies"""
 
 import asyncio
 import time
