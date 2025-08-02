@@ -1,4 +1,4 @@
-#!/usr/bin/env pytohn3
+#!/usr/bin/env python3
 """this sciprt contains a fucntion that generates a coroutine"""
 
 
