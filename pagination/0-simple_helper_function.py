@@ -11,6 +11,4 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """this function returns the pagination layout for a
     page given its amount of pages and size"""
 
-    start = (page - 1) * page_size
-    end = start + page_size
-    return (start, end)
+    return ((page - 1) * page_size, page_size * page)
