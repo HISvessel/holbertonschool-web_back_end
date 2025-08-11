@@ -1,0 +1,1 @@
+This repository holds all of the concepts and theories for web pagination, a way to extend the content of one single object into multiple pages.
