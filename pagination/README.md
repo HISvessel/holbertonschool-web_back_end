@@ -4,7 +4,7 @@ API filtering: when making requests, we normally perform these fetches with a si
 
 example: suppose you want to fetch items that are of a price greater than 10 but less than 100. Well you can do that by modifying the route: GET /items now turns to GET /items?price[gte]=10&price[lte]=100
 
-Pagination is a filtering method for API requests and responses. Say you want to return a list of entities. To return multiple items one would effectively need pagination to parse cleanly. Without pagination, a simple request can return a lot of items. Imagine using joins and the distinction between that and cross joins or cartesian products. Joins search for very particular products from very particular places. Cartesian products perform a join of every element form every table, giving us more than what was asked for. Pagination exists to solve that issue
+Pagination is a filtering method for API requests and responses. Say you want to return a list of entities. To return multiple items one would effectively need pagination to parse cleanly. Without pagination, a simple request can return a list of every item. Imagine performing sql queries and asking for joins. Without pagination, we would end up selecting every element in every table, thereby performing a cross join or cartesian product. Joins search for very particular products from very particular tables. Cartesian products perform a join of every element form every table, effectively giving us more than what was asked for. This causes a breakdown in logic for fetching and, in the case of website performance, this overload of information can cause decrease in performance due to a high volume of information being fetched and output. Pagination exists to solve these issues.
 
 Offset pagination:
 The simplest form of paging, we perform a limit or an offset of how many items are divided by page. These are ver popular with sql databases, which already have limit and offset as part of their select syntax. Offset pagination looks a little something like this:
@@ -29,3 +29,7 @@ GET /items?limit=20&after_id=40
 
 The above example follows a chain for searching for the 20 most recent items, then on the scroll or next page, the client finds the last id of the 20 previously returned items, and makes a second query using the last 20 items as the point of initial search. Afterwards, the client making the get request performs yet another request, and the result gives the next 20 items parting from the 40 items retrieved in the aforementioned process.
 
+
+Pagination and Web Scraping:
+
+The process of pagination
