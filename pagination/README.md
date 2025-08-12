@@ -32,4 +32,10 @@ The above example follows a chain for searching for the 20 most recent items, th
 
 Pagination and Web Scraping:
 
-The process of pagination
+
+The process of pagination:
+To paginate, we would need to scrape all the data we need. Afterwards, we can narrow down the objects in a structured manner, so as to choose the objects that stay within our desired parameters. For example, when we perform a SQL query, we obtain all the relevant data from our table or tables, through a select statement. Afterwards, we filter out the content and the amount to retrieve by use of if conditionals and iteration limits. For sql, we use if clauses to find the data relevant to the information provided in the if clause, and we use the keywords limit and offset to have a starting point and the amount of data given. 
+
+In one of the tasks studied, we retrieve the data we want to traverse through, place it into a structure we can manipulate, and just filter from start position to end position in said structure. First, we created a helper finction that will set and return all the data in and between the indexed starting point and the endpoint. In the next exercise, we created an example of a server side pagination function that will return the amount of data that will be returned, given a page index and page size(the amount of content that is held in each page). To find the data at the given position, we iterate through the file where the data is stored, and find the data at the given index per the page size and page number. 
+
+Hypermedia and metadata:
