@@ -34,56 +34,34 @@ class Server:
         """
         if self.__indexed_dataset is None:
             dataset = self.dataset()
-            truncated_dataset = dataset[:1000] #what's the point of this?
+            truncated_dataset = dataset[:1000]
             self.__indexed_dataset = {
                 i: dataset[i] for i in range(len(dataset))
             }
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-            """this function returns a dictionary containing the items that are queried
-            from the dataset, and it gets the correct order of these items regardless if they
-            were other items previously deleted."""
+        """this function returns a dictionary containing the items
+        that are queried from the dataset, and it gets the
+        correct order of these items regardless if they
+        were other items previously deleted. Non existent
+        elements should be handled gracefully by lookning to
+        the next one."""
 
-            assert isinstance(index, int) and 0 <= index <= len(self.dataset())
-            next_index = index + page_size
-            data = self.indexed_dataset()
-            data_index = [data.get(index) + data.get(index + 1)] if not None else 
+        assert isinstance(index, int) and 0 <= index <= len(self.dataset())
+        next_index = index + page_size
+        data = self.indexed_dataset()
+        next = index + 1
+        element = data.get(index)
+        next_element = data.get(next)
+        second_next_element = data.get(next + 1)
+        data_index = []
+        if element is None:
+            data_index = [next_element + second_next_element]
+        else:
+            data_index = [element + next_element]
 
-            return {"index": index,
-                    "data": data_index,
-                    "page_size": page_size,
-                    "next_index": next_index}
-
-
-server = Server()
-
-server.indexed_dataset()
-
-try:
-    server.get_hyper_index(300000, 100)
-except AssertionError:
-    print("AssertionError raised when out of range")        
-
-
-index = 3
-page_size = 2
-
-print("Nb items: {}".format(len(server._Server__indexed_dataset)))
-
-# 1- request first index
-res = server.get_hyper_index(index, page_size)
-print(f"The first run -> {res}")
-
-# 2- request next index
-print(f"> The second run -> {server.get_hyper_index(res.get('next_index'), page_size)}")
-
-# 3- remove the first index
-del server._Server__indexed_dataset[res.get('index')]
-print("Nb items: {}".format(len(server._Server__indexed_dataset)))
-
-# 4- request again the initial index -> the first data retreives is not the same as the first request
-print(f"The third run -> {server.get_hyper_index(index, page_size)}")
-
-# 5- request again initial next index -> same data page as the request 2-
-print(f"The final run -> {server.get_hyper_index(res.get('next_index'), page_size)}")
+        return {"index": index,
+                "data": data_index,
+                "page_size": page_size,
+                "next_index": next_index}
