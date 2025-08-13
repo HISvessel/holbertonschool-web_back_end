@@ -38,7 +38,7 @@ To paginate, we would need to scrape all the data we need. Afterwards, we can na
 
 In one of the tasks studied, we retrieve the data we want to traverse through, place it into a structure we can manipulate, and just filter from start position to end position in said structure. First, we created a helper finction that will set and return all the data in and between the indexed starting point and the endpoint. In the next exercise, we created an example of a server side pagination function that will return the amount of data that will be returned, given a page index and page size(the amount of content that is held in each page). To find the data at the given position, we iterate through the file where the data is stored, and find the data at the given index per the page size and page number. 
 
-Pagination should also be resilient. If I were to insert or delete rows, 
+Pagination should also be resilient. If I were to insert or delete rows, offsetting indecess should not affect the data that we are capable of accessing.
 
 Hypermedia and metadata:
 Hypermedia is a media that includes non linear branching from one location in the media to another. This non--linear branching can be performed by something like a hyperlink embedded in the media., to give an example. In their own regard, hyperlinks are objects that operate beyond the normal scope of the object it is linked to; meaning that it operates beyond passively consumed media. They are an example of what is called hypermedia control. A good example of hypermedia is the hypertext, which are shared through HTTPs, or transfer protocols, that allow them to intertwine with other hypertexts to create an entire web infrastructure.
