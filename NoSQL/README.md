@@ -1,0 +1,1 @@
+Welcome to NoSQL. This repository will help us get a better understanding of how to handle non relational databses, or non structured databases. 
