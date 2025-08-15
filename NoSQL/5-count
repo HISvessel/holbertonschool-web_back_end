@@ -1,0 +1,2 @@
+// this query finds the amount of documents inside of a collection
+db.school.count()
