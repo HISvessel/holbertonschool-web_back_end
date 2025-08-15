@@ -1,0 +1,2 @@
+// this query deletes a line with the matching key criteria
+db.school.deleteMany({"name": "Holberton school"})
