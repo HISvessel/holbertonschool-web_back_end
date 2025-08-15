@@ -1,0 +1,2 @@
+// this files queries mongodb to create and use a database
+use my_db
