@@ -1,0 +1,2 @@
+// this query finds all the matches of a given row
+db.school.find({"name": "Holberton school"})
