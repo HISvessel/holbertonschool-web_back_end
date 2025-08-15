@@ -1,0 +1,2 @@
+// this function finds all the entries in the school collection
+db.school.find()
