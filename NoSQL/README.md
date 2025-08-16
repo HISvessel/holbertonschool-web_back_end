@@ -120,4 +120,6 @@ db.dbs.delete("key_to_filter": "value") <- this query deletes the first instance
 
 
 7) Python and mongoDB
-We can use ORM principles to utilize mongo db but from Python instead of the command line interface. We can do this with the Python driver called PyMongo
+We can use ORM principles to utilize mongo db but from Python instead of the command line interface. We can do this with the Python driver called PyMongo. With this module, we can use Python to access the MongoDB database and make use of the mongo shell from our programming scope. 
+
+Accessing the database from python is done by use of the MongoCollection function. This establishes a connection with the default host and port. 
