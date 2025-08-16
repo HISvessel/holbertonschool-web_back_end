@@ -101,4 +101,23 @@ In-Memory Storage Engine.
 In addition, MongoDB provides pluggable storage engine API that allows third parties to develop storage engines for MongoDB.
 
 5) mongo shell
-changes for he shell
+The mongo shell is an interactive JavaScript interface to MongoDB. This shell can be used to query and update data as well as perform administrative operations.
+
+6) Syntax and basic queries
+show dbs <- this can be used to show all available databases
+
+use dbs <- this query toggles the mentioned database to be used
+
+db.dbs.find() <- this query searches for all inserted data contained in the dbs collection.
+
+db.dbs.insert(key: value) <- this query inserts data inside of the dbs collection as stored by key value pairs. **NOTE: data is inserted as arguments in the form of a dictionary, so open {} inside of the function parenthesis.
+
+db.dbs.count() <- this query returns the sum of all inserted data inside of the tagged collection.
+
+db.dbs.update({key_to_find, value_to_find}, {$set: {"new_key": "new_value"}}) <- this query updates all instances of the key_to_find and value_to_find inside of the collection. You use the $set(one of the many arguments that can be used for update operations) in order to inserts a new key:value pair. **NOTE: the above syntax is correct; whichever key value pair is inserted, it must be done as a new dictionary separated by a comma inside of the update function scope().
+
+db.dbs.delete("key_to_filter": "value") <- this query deletes the first instance of the item in the collection with the filtered key:value pair. the delete function has two variants: deleteOne() and deleteAll(). 
+
+
+7) Python and mongoDB
+We can use ORM principles to utilize mongo db but from Python instead of the command line interface. We can do this with the Python driver called PyMongo
