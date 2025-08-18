@@ -1,0 +1,1 @@
+This repository holds all the projects and tasks to learn the basics for the ES6 version of JavaScript. Welcome.
