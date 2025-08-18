@@ -6,6 +6,9 @@ from pymongo import MongoClient
 
 
 if __name__ == "__main__":
+    """this main function acceses the nginx database and returns
+    the amount of every http request"""
+
     client = MongoClient('mongodb://127.0.0.1:27017')
 
     db = client.logs
@@ -21,7 +24,7 @@ if __name__ == "__main__":
     for method in methods:
         count = collection.count_documents({"methods": method})
         print(f"\tmethod {method}: {count}")
-    
+
     status_check = collection.count_document(
         {"method": "GET", "path": "/status"})
     print(f"{status_check} status check")
