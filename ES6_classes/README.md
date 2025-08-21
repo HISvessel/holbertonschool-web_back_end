@@ -1,0 +1,1 @@
+Welcome to classes in JavaScript ES6
