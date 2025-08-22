@@ -7,7 +7,7 @@ export default class Pricing {
     }
 
     this._amount = amount;
-    this._currency = new Currency(currency.code, currency.name);
+    this._currency = currency;
   }
 
   get amount() {
@@ -27,7 +27,7 @@ export default class Pricing {
   displayFullPrice() {
     return `${this._amount} ${this._currency.displayFullCurrency()}`;
   }
-  static convertPrize(_amount, conversionRate) {
-    return this._amount * conversionRate;
+  static convertPrice(amount, conversionRate) {
+    return amount * conversionRate;
   }
 }
