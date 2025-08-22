@@ -29,6 +29,6 @@ export default class Pricing {
     if (typeof amount !== "number" || typeof conversionRate !== "number") {
       console.error("Parameters must be numbers")
     }
-    return amount * conversionRate;
+    return this._amount * conversionRate;
   }
 }
