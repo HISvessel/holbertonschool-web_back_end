@@ -3,7 +3,7 @@ export default class HolbertonClass {
     this._size = size;
     this._location = location;
   }
-  Number() {
+  parseInt() {
     return this._size;
   }
   toString() {
