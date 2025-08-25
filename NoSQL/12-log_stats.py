@@ -17,7 +17,6 @@ if __name__ == "__main__":
     total_logs = collection.count_documents({})
     print(f"{total_logs} logs")
 
-
     print("Methods:")
     methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
 
