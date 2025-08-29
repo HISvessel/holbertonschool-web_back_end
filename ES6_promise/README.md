@@ -1,1 +1,4 @@
 Welcome. This repository holds all the compiled notes as we learn about promises in ES6, along with asynchronous JavaScript and try/catch clauses. 
+
+Promises:
+    
