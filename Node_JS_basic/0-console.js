@@ -1,4 +1,4 @@
-function displayMessage(string) {
+const displayMessage = (string) => {
   process.stdout.write(`${string}\n`);
 }
 
