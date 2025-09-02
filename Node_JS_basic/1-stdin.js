@@ -1,11 +1,13 @@
-const { spawn } = require("node:child_process");
-const echo = spawn("echo");
+const { spawn } = require("child_process");
 
 process.stdout.write("Welcome to Holberton School, what is your name? \n");
-process.stdin.on("readable", function() {
-  const name = process.stdin.read();
-  process.stdout.write(`Your name is: ${name}`);
-  echo.stdin.on("echo", () => {
-    process.stdout.write("This important software is now closing \n");
+process.stdin.on("data", (input) => {
+  const name = input.toString().trim();
+  process.stdout.write(`Your name is: ${name} \n`);
+  const child = spawn("echo", ["This important software is now closing"]);
+  child.stdout.pipe(process.stdout);
+  child.on("close", () => {
+    process.exit(0);
   });
 });
+
