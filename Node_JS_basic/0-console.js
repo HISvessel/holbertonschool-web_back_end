@@ -1,5 +1,5 @@
-const displayMessage = (string) => {
-  process.stdout.write(`${string}\n`);
+function displayMessage(message) {
+console.log(message);
 }
 
 module.exports = displayMessage;
