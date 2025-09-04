@@ -42,4 +42,3 @@ Node.js vs the browser:
 Simply put, Node.js and the browser, while native to JavaScript, are totally different to each other. What is the difference? The ecosystem. Programming JS i the browser usually revolves around interacting with the DOM or web platform APIs like Cookies. These do not exist in Node.js. Alternatively, the browser does not have the same APIs that node.js provides through its modules. 
 Second, Node.js allows you to control the environment, meaning you know exactly which version of the ECMScript you can toggle to build an application with. The browser does not give you the option to choose which version of the browser the consumer can use. This has the added benefit of having the server side source code run on the more up to date versions of JS in contrast to the browser, which can be much slower to upgrade on the long run. 
 
-
