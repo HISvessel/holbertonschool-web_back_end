@@ -4,27 +4,27 @@ const util = require('util');
 
 const app = http.createServer(async (req, res) => {
   if (req.url === '/') {
-    res.writeHead(200, { 'content-type' : 'text/plain' });
+    res.writeHead(200, { 'content-type': 'text/plain' });
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
-    try{
+    try {
       const originalLog = console.log;
       let logBuffer = '';
       console.log = (...args) => {
-      const message = util.format(...args);
-      logBuffer += message + '\n';
-      originalLog.apply(console, args);
-    };
+        const message = util.format(...args);
+        logBuffer += message + '\n';
+        originalLog.apply(console, args);
+      };
 
-    const content = await countStudents('./database.csv');
-    console.log = originalLog;
-    res.writeHead(200, { 'content-type' : 'text/plain' });
-    res.end(`This is the list of our students\n${logBuffer}`);
+      const content = await countStudents('./database.csv');
+      console.log = originalLog;
+      res.writeHead(200, { 'content-type': 'text/plain' });
+      res.end(`This is the list of our students\n${logBuffer}`);
     } catch (e) {
       throw new Error('Cannot load the database');
     }
   } else {
-    res.writeHead(404, { 'content-type' : 'text/plain' });
+    res.writeHead(404, { 'content-type': 'text/plain' });
     res.end('404 Not found');
   }
 });
