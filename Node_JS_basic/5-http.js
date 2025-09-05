@@ -1,6 +1,5 @@
 const http = require('node:http');
 const countStudents = require('./3-read_file_async');
-const path = 'database.csv';
 const util = require('util');
 
 const app = http.createServer(async (req, res) => {
@@ -17,7 +16,7 @@ const app = http.createServer(async (req, res) => {
       originalLog.apply(console, args);
     };
 
-    const content = await countStudents(path);
+    const content = await countStudents('./database.csv');
     console.log = originalLog;
     res.writeHead(200, { 'content-type' : 'text/plain' });
     res.end(`This is the list of our students\n${logBuffer}`);
