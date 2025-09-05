@@ -22,7 +22,7 @@ const app = http.createServer(async (req, res) => {
     res.writeHead(200, { 'content-type' : 'text/plain' });
     res.end(`This is the list of our students\n${logBuffer}`);
     } catch (e) {
-      throw new Error('Cannot load database');
+      throw new Error('Cannot load the database');
     }
   } else {
     res.writeHead(404, { 'content-type' : 'text/plain' });
