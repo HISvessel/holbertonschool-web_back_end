@@ -8,10 +8,10 @@ const app = http.createServer(async (req, res) => {
     res.writeHead(200, { 'content-type' : 'text/plain' });
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
-    const originalLog = console.log;
-    let logBuffer = '';
-
-    console.log = (...args) => {
+    try{
+      const originalLog = console.log;
+      let logBuffer = '';
+      console.log = (...args) => {
       const message = util.format(...args);
       logBuffer += message + '\n';
       originalLog.apply(console, args);
@@ -21,6 +21,9 @@ const app = http.createServer(async (req, res) => {
     console.log = originalLog;
     res.writeHead(200, { 'content-type' : 'text/plain' });
     res.end(`This is the list of our students\n${logBuffer}`);
+    } catch (e) {
+      throw new Error('Cannot load database');
+    }
   } else {
     res.writeHead(404, { 'content-type' : 'text/plain' });
     res.end('404 Not found');
