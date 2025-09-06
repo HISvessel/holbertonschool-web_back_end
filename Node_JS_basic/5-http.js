@@ -1,6 +1,6 @@
 const http = require('node:http');
 const countStudents = require('./3-read_file_async');
-const path = 'database.csv';
+const path = process.argv[2];
 
 const app = http.createServer(async (req, res) => {
   if (req.url === '/') {
