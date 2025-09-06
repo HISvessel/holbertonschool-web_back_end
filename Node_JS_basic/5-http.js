@@ -12,7 +12,7 @@ const app = http.createServer(async (req, res) => {
       res.writeHead(200, { 'content-type': 'text/plain' });
       res.end(`This is the list of our students\n${content}`);
     } catch (e) {
-      res.writeHead(500, { 'content-type': 'text/plain' });
+      res.writeHead(400, { 'content-type': 'text/plain' });
       res.end(`This is the list of students\n${e}`);
     }
   } else {
