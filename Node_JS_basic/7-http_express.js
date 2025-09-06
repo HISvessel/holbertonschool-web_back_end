@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 
 app.get('/students', async (req, res) => {
   const content = await countStudents(path);
-  res.end(`This is the list of our students\n ${content}`);
+  res.end(`This is the list of our students\n${content}`);
 });
 
 app.listen(port);

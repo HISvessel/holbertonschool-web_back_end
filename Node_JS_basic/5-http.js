@@ -1,6 +1,6 @@
 const http = require('node:http');
 const countStudents = require('./3-read_file_async');
-const util = require('util');
+const path = 'database.csv';
 
 const app = http.createServer(async (req, res) => {
   if (req.url === '/') {
@@ -8,18 +8,9 @@ const app = http.createServer(async (req, res) => {
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
     try {
-      const originalLog = console.log;
-      let logBuffer = '';
-      console.log = (...args) => {
-        const message = util.format(...args);
-        logBuffer += message + '\n';
-        originalLog.apply(console, args);
-      };
-
-      const content = await countStudents('./database.csv');
-      console.log = originalLog;
+      const content = await countStudents(path);
       res.writeHead(200, { 'content-type': 'text/plain' });
-      res.end(`This is the list of our students\n${logBuffer}`);
+      res.end(`This is the list of our students\n${content}`);
     } catch (e) {
       throw new Error('Cannot load the database');
     }

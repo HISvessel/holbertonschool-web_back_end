@@ -7,6 +7,7 @@ function countStudents(path) {
         reject(new Error('Cannot load the database'));
         return;
       }
+      const output = [];
       const lines = data.split('\n').map((l) => l.trim()).filter((l) => l.length > 0);
       const rows = lines.slice(1);
       const fieldRows = rows.map((student) => {
@@ -20,8 +21,11 @@ function countStudents(path) {
       console.log(`Number of students: ${rows.length}`);
       console.log(`Number of students in CS: ${CSStudents.length}. List: ${CSStudents.map((student) => student[0]).join(', ')}`);
       console.log(`Number of students in SWE: ${SWEStudents.length}. List: ${SWEStudents.map((student) => student[0]).join(', ')}`);
-
-      response();
+      
+      output.push(`Number of students: ${rows.length}`);
+      output.push(`Number of students in CS: ${CSStudents.length}. List: ${CSStudents.map((student) => student[0]).join(', ')}`);
+      output.push(`Number of students in SWE: ${SWEStudents.length}. List: ${SWEStudents.map((student) => student[0]).join(', ')}`);
+      response(output.join('\n'));
     });
   });
 }
