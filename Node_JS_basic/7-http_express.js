@@ -1,8 +1,7 @@
 const express = require('express');
-const path = 'database.csv';
+
 const port = 1245;
 const countStudents = require('./3-read_file_async');
-
 const app = express();
 
 app.get('/', (req, res) => {
@@ -10,8 +9,12 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', async (req, res) => {
-  const content = await countStudents(path);
-  res.end(`This is the list of our students\n${content}`);
+  try {
+    const content = await countStudents(process.argv[2]);
+    res.end(`This is the list of our students\n${content}`);
+  } catch (e) {
+    res.end(`This is the list of our students\n${e.toString().replace('Error: ', '')}`);
+  }
 });
 
 app.listen(port);
