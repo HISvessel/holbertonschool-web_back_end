@@ -33,3 +33,5 @@ const readDatabase = (path) => new Promise((response, reject) => {
     }
   })
 })
+
+export default readDatabase;
