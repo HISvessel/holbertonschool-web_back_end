@@ -29,7 +29,7 @@ const readDatabase = (path) => new Promise((response, reject) => {
       for (const [field, group] of Object.entries(studentGroups)) {
         students[field] = group.map((student) => student.firstname);
       }
-      resolve(students);
+      response(students);
     }
   })
 })
