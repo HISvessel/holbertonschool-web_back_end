@@ -1,0 +1,1 @@
+This directory contains all notes taken during our last trimester workshops for professional development
