@@ -1,0 +1,40 @@
+STAR framework for interviews
+ Wha is STAR?
+ Situation, Task, Action, Result.
+
+
+High conscientiousness
+
+Low conscientiousness
+
+
+Implementing STAR framework:
+
+Step 1: Pick a Story
+
+Step 2: Develop a STAR storytelling
+
+Step 3: Demonstrate
+
+Task 1: Tell a story about a project you're currently building. What challenges have you come accross
+and how are you solving it or have solved it?
+-> Currently working on a project to develop a web application that requires
+interaction and compatibility between hardware and software.
+-> The project in question uses Python modules that are new topics for me to explore. 
+During the beginning phases, I faced an issue where the current development environment(VS Code)
+cannot use the hardware(camera) and work alongside the software
+(source code and frameworks), which raised concerns about potentially facing 
+project incompletion.
+-> Further studied the resources to find a solution that can enable us to make the 
+software find compatible hardware and implement the server side logic.
+-> A temporary external hardware was found that can load the software and allow us
+to test the server side logic and confrim that we can move forward with the project. 
+
+
+Key takeaways:
+
+Use programming languages.
+Be clear and concise.
+Know you strengths and weaknesses.
+Inform yourself on the broad scope of your tasks and situations.
+Show interests in the company tech stack or developed tools.
