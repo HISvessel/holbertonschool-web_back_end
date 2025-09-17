@@ -1,0 +1,37 @@
+Set your goals and track your job search porgress
+
+How long for a job?
+A month
+Two months
+
+The true answer: depends on the company. It can take from two weeks to seven months depending on the company process
+
+How to stand out in front of an employer?
+Think about who you were beforebeing a developer(previous skills and work history) and who you are now as a developer
+
+Job search burnout: saturating yourself with job apllications and incessant searching.
+The solution: 
+    1) Count your applications for daily goals and check in a structured way throughout your different places: LinkedIN, WTTJ, Indeed, etc.
+    2) Track your progress. Perform a good number of aout 5 - 10 applications per day.
+    3) Practice your calls and interview meetings, keep yourself accountable.
+    4) Determine SMART goals for your job search. 
+    5) Networking
+
+Places to network:
+    1) LinkedIN
+    2) Slack
+    3) Meetup.com
+
+    Additional topics for networking:
+        a) Hackathon
+        b) Personal connections
+        c) Coding everyday
+        d) Practice mock interviews
+    
+Setting goals:
+    Keep your skills relevant
+    Work on industry specific tasks
+    Automate
+    Code the things you want to Code
+    revisit the basics
+
